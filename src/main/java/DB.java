@@ -10,7 +10,7 @@ public class DB {
 
         try {
             if (System.getenv("DATABASE_URL") == null) {
-                dbUri = new URI("postgres://localhost:5432/wonderwild");
+                dbUri = new URI("postgres://localhost:5432/wildmap");
             } else {
                 dbUri = new URI(System.getenv("DATABASE_URL"));
             }
