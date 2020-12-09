@@ -14,7 +14,7 @@ This application was inspired by Douglas Fir for a case study on whether the for
  | Add animal (endangered & common)| click on the add animal button | animal added to list. |   
  | Add sighting | click on add sighting button  | new sighting is added  |
  | View animals/ sightings | click on link on the navigation bar | all recorded animals and sightings are seen |
-  | Edit/Delete animal/sighting | click on edit/delete  button  | new animal/sighting is added/deleted  |
+  | Edit/Delete animal/sighting | click on edit/delete  button  | new animal/sighting is edited/deleted  |
 
 
 ## Pre-requisites
