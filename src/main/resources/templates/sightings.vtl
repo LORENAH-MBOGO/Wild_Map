@@ -2,7 +2,7 @@
 <nav class="navbar navbar-expand-lg navbar-dark fixed-top scrolling-navbar">
     <div class="container">
         <a class="navbar-brand" href="/"><strong>Wild_Map</strong></a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-7" aria-controls="navbarSupportedContent-7" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupport" aria-controls="navbarSupport" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent-7">
@@ -26,21 +26,23 @@
     </div>
 </nav>
 <!-- Navbar -->
-<!-- Full Page Intro -->
+
+
 <div class="view" style="background-image: url('/images/2010953.jpeg'); background-repeat: no-repeat; background-size: cover; background-position: center center;">
-    <!-- Mask & flexbox options-->
+
     <div class="mask rgba-black-light align-items-center">
         <!-- Content -->
         <div class="container">
-            <!--Grid row-->
+
             <div class="indexRow">
-                <!--Grid column-->
+
                 <div class="col-md-12 mb-4 white-text text-center">
                     <h3 class="text-warning text-uppercase font-weight-bold mb-0 pt-md-5 pt-5 animated wobble"><strong> Sightings: </strong></h3>
                     <div class="row">
                       <div class="col-sm-4 col-sm-offset-4">
                         <a href="/sightings/new"><button type="button" class="btn btn-success">Add Sighting</button></a>
                         <h3>All Sightings:</h3>
+
                         #foreach($sighting in $sightings)
                           <h3><a href="/animals/$sighting.getAnimalId()">$Animal.find($sighting.getAnimalId()).getName()</a></h3>
                           <p><em>$sighting.getTimeSeen()</em></p>
@@ -50,18 +52,18 @@
                             <a href="/sightings/$sighting.getId()/delete" class="delete"> [delete]</a>
                           </p>
                         #end
+
                       </div>
                     </div>
                 </div>
-                <!--Grid column-->
+
             </div>
-            <!--Grid row-->
         </div>
         <!-- Content -->
     </div>
-    <!-- Mask & flexbox options-->
+
 </div>
-<!-- Full Page Intro -->
+
 </header>
-<!-- Main navigation -->
+
 
