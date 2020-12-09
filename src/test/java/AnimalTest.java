@@ -1,58 +1,36 @@
-import junit.framework.TestCase;
+import org.junit.Rule;
+import org.junit.Test;
 
-public class AnimalTest extends TestCase {
+import static org.junit.Assert.*;
 
-    public void testTestSetName() {
+public class AnimalTest {
+    @Rule
+    public DatabaseRule databaseRule = new DatabaseRule();
+
+    @Test
+    public void animalInstantiatesCorrectly() {
+        Animal animal = new Animal("Lion");
+         assertTrue(animal instanceof Animal);
+
     }
 
-    public void testTestEquals() {
+    @Test
+    public void getNameReturnsCorrectName_Lion() {
+        Animal animal = new Animal ("Lion");
+        assertEquals("Lion", animal.getName());
     }
 
-    public void testSave() {
+    @Test
+    public void equalsFunctionsCorrectly_True() {
+        Animal animal = new Animal ("Lion");
+        Animal secondAnimal = new Animal ("Lion");
+        assertTrue(animal.equals(secondAnimal));
     }
 
-    public void testDelete() {
-    }
-
-    public void testAll() {
-    }
-
-    public void testFind() {
-    }
-
-    public void testTestGetName() {
-    }
-
-    public void testGetId() {
-    }
-
-    public void testGetType() {
-    }
-
-    public void testTestSetName1() {
-    }
-
-    public void testTestEquals1() {
-    }
-
-    public void testUpdate() {
-    }
-
-    public void testTestGetName1() {
-    }
-
-    public void testTestSetName2() {
-    }
-
-    public void testTestEquals2() {
-    }
-
-    public void testTestGetName2() {
-    }
-
-    public void testTestSetName3() {
-    }
-
-    public void testTestEquals3() {
+    @Test
+    public void findByIdReturnsCorrectAnimal_True() {
+        Animal animal = new Animal ("Lion");
+        animal.save();
+        assertTrue(animal.equals(Animal.find(animal.getId())));
     }
 }

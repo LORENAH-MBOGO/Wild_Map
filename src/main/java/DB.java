@@ -3,26 +3,10 @@ import java.net.URI;
 import java.net.URISyntaxException;
 
 public class DB {
-    private static URI dbUri;
-    public static Sql2o sql2o;
 
-    static {
+    public static Sql2o sql2o = new Sql2o("jdbc:postgresql://localhost:5432/wildmap", "moringa", "skylar");
+//    public static Sql2o sql2o = new Sql2o("jdbc:postgresql://ec2-3-210-255-177.compute-1.amazonaws.com:5432/d3ro70t2uhnta4",
+//            "onzeqcwxqxllki", "e40995f1734f2c60615abf48f0d08a23707bc172ee2976bebc403e041301649e");
 
-        try {
-            if (System.getenv("DATABASE_URL") == null) {
-                dbUri = new URI("postgres://localhost:5432/wildmap");
-            } else {
-                dbUri = new URI(System.getenv("DATABASE_URL"));
-            }
 
-            int port = dbUri.getPort();
-            String host = dbUri.getHost();
-            String path = dbUri.getPath();
-            String username = (dbUri.getUserInfo() == null) ? "moringa" : dbUri.getUserInfo().split(":")[0];
-            String password = (dbUri.getUserInfo() == null) ? "skylar" : dbUri.getUserInfo().split(":")[1];
-
-            sql2o = new Sql2o("jdbc:postgresql://" + host + ":" + port + path, username, password);
-        } catch (URISyntaxException e ) {
-        }
-    }
 }
